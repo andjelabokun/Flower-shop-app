@@ -1,0 +1,227 @@
+/* Global CSS — boje, tipografija, utility klase, reset */
+:root {
+  /* 🌸 Nova paleta — cvećara vibe */
+  --bg: #fff7fa;           /* svetla pozadina */
+  --surface: #ffffff;      /* površine kartica, sekcija */
+  --muted: #a26a82;        /* sekundarni tekst */
+  --primary: #e75480;      /* glavna boja (ružičasta) */
+  --secondary: #ffd6e0;    /* svetlo roze akcent */
+  --accent: #a3c7a3;       /* zelena nijansa za detalje */
+  --text: #333333;         /* primarni tekst */
+  --stroke: #f4c2c2;       /* ivice i obrubi */
+  --radius: 16px;          /* zaobljenja */
+  --shadow: 0 4px 20px rgba(231, 84, 128, 0.1); /* senka */
+}
+
+/* Globalni reset i font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin-inline: auto;
+}
+
+/* 🌼 Dugmići */
+.btn {
+  border: 1px solid var(--stroke);
+  background: var(--surface);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(231, 84, 128, 0.2);
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #d74370;
+}
+
+/* 💫 Linkovi */
+.link {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+/* 💎 Chip (mali badge element) */
+.chip {
+  border: 1px solid var(--stroke);
+  background: var(--surface);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.chip.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* 🪷 Pil (obla oznaka) */
+.pill {
+  display: inline-block;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* 📦 Sekcije */
+section {
+  padding: 56px 0;
+  background: var(--surface);
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.section h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+}
+
+/* 🌸 Footer */
+
+.footer {
+  border-top: 1px solid var(--stroke);
+  padding: 28px 0;
+  background: #fff;
+  text-align: center;
+  color: var(--text);
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* da se lepo složi ako se smanji ekran */
+  gap: 20px;
+  text-align: left;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.moto {
+  font-style: italic;
+  color: var(--muted);
+  max-width: 400px;
+  line-height: 1.4;
+}
+
+.foot-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.foot-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.foot-links a:hover {
+  color: var(--primary);
+}
+
+small {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* 🌿 Brand i helper klase */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.brand .dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* ⚙️ Responsive utiliti */
+@media (max-width: 980px) {
+  section {
+    padding: 42px 0;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 620px) {
+  section {
+    padding: 32px 0;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+

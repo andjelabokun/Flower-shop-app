@@ -1,0 +1,108 @@
+.navbar {
+  background: linear-gradient(90deg, #ffe6ec, #ffd6e0);
+  box-shadow: 0 2px 8px rgba(255, 182, 193, 0.2);
+  padding: 12px 40px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+  width: 40px;
+  margin-right: 8px;
+}
+
+.brand-name {
+  font-weight: 700;
+  color: #d6336c;
+  font-size: 1.3rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #6c2e55;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  color: #d6336c;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-login,
+.btn-register,
+.btn-logout {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-login {
+  background: #fff;
+  color: #d6336c;
+  border: 1px solid #d6336c;
+}
+
+.btn-login:hover {
+  background: #d6336c;
+  color: #fff;
+}
+
+.btn-register {
+  background: #d6336c;
+  color: white;
+}
+
+.btn-register:hover {
+  background: #b82b5b;
+}
+
+.btn-logout {
+  background: #fff0f5;
+  color: #d6336c;
+  border: 1px solid #d6336c;
+}
+
+.btn-logout:hover {
+  background: #d6336c;
+  color: #fff;
+}
+
+.welcome {
+  font-weight: 500;
+  color: #6c2e55;
+}
+

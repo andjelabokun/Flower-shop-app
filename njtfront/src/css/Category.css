@@ -1,0 +1,183 @@
+.container.admin-wrap {
+  padding: 40px;
+  background: #fff;
+  min-height: 93vh;
+}
+
+.admin-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.admin-head h1 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.muted {
+  color: #777;
+  font-size: 0.95rem;
+}
+
+.row-gap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.input {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  min-width: 220px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.input:focus {
+  border-color: #e75480;
+  outline: none;
+  box-shadow: 0 0 5px rgba(231, 84, 128, 0.3);
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #e75480;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.95rem;
+  color: #fff;
+  
+}
+
+.btn:hover {
+  background: #d74370;
+}
+
+.btn.primary {
+  background: #e75480;
+  color: #fff;
+  border: none;
+}
+
+.btn.primary:hover {
+  background: #d74370;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  table-layout: fixed;
+}
+
+.table th {
+  text-align: left;
+  background: #fafafa;
+  padding: 14px;
+  color: #555;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+
+.table td {
+  padding: 14px;
+  border-bottom: 1px solid #f1f1f1;
+  color: #444;
+   overflow: hidden;      /* sprečava pomeranje ako je tekst duži */
+  text-overflow: ellipsis; /* dodaje "..." ako nema mesta */
+  white-space: nowrap;
+}
+
+.table tr:hover {
+  background: #fff6f8;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Manje dugme */
+.btn.tiny {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  margin-right: 40px;
+}
+
+/* Dugme za opasne akcije (brisanje) */
+.btn.danger {
+  background-color: #e75480;  /* roze */
+  color: #fff;
+}
+
+.btn.danger:hover {
+  background-color: #d74370;  /* tamnija nijansa roze na hover */
+}
+
+/* Stilovi za Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Osigurava da je iznad svega */
+}
+
+/* Stilovi za Modal Sadržaj */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Stilovi za input u modal-u (ako nemate globalni .input stil) */
+.modal-content .input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Važno za ispravnu širinu */
+}
+
+/* Stilovi za forme iznad tabele */
+.panel {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}

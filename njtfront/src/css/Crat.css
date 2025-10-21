@@ -1,0 +1,182 @@
+
+.cart-page-container {
+    max-width: 1000px; 
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cart-page-container h2 {
+    text-align: center;
+    color: #cc337a; 
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.empty-cart-message {
+    text-align: center;
+    padding: 50px;
+    border: 1px dashed #ccc;
+    color: #666;
+    border-radius: 4px;
+}
+
+
+.cart-content-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.cart-items-list {
+    flex: 2; 
+}
+
+
+.cart-item-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.item-details {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.item-name {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.item-price-per-unit {
+    color: #888;
+    font-size: 0.9em;
+}
+
+
+.qty-controls {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.qty-controls button {
+    background: #e0e0e0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.qty-controls button:hover {
+    background: #ccc;
+}
+
+.qty-input {
+    width: 40px;
+    text-align: center;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.item-subtotal {
+    font-weight: bold;
+    color: #cc337a;
+    width: 120px;
+    text-align: right;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: color 0.2s;
+}
+
+.btn-delete:hover {
+    color: #c0392b;
+}
+
+
+.order-summary-box {
+    flex: 1; 
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: fit-content; 
+    border-top: 5px solid #cc337a;
+}
+
+.order-summary-box h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.total-row {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px dashed #eee;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #cc337a;
+}
+
+.btn-order-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #cc337a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-order-submit:hover {
+    background-color: #cc337a;
+}
+
+/* Prilagođavanje textarea da zauzima celu širinu */
+.napomena-field textarea {
+    /* Ovo je ključna linija: 
+       Postavlja širinu na 100% roditeljskog elementa (.napomena-field) 
+    */
+    width: 100%; 
+
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Dozvoli korisniku da menja visinu */
+    font-family: inherit;
+    box-sizing: border-box; /* NOVO: Osigurava da se padding i border ne dodaju na ukupnu širinu */
+}
+

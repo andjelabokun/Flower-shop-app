@@ -1,0 +1,121 @@
+.flowers-page {
+  text-align: center;
+  padding: 50px 40px;
+  background: #fff7f9;
+}
+
+.flowers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.flower-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(255, 192, 203, 0.3);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+.flower-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(179, 0, 89, 0.3);
+}
+
+.flower-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.price {
+  color: #b30059;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.btn-add {
+  background: #b30059;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-add:hover {
+  background: #cc337a;
+}
+
+.add-to-cart-btn {
+  background: linear-gradient(90deg, #ff66b2, #ff1a8c); /* tvoje BlossomGarden roze */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 12px;
+}
+
+.add-to-cart-btn:hover {
+  background: linear-gradient(90deg, #ff1a8c, #ff66b2);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 102, 178, 0.4);
+}
+
+.footer {
+  margin-top: 380px;
+}
+
+.category-name {
+  color: #cc337a; /* 🌸 tvoja karakteristična roza nijansa */
+  font-weight: 700; /* malo deblje */
+  text-transform: capitalize; /* veliko prvo slovo */
+}
+
+.flowers-title {
+  text-align: center;
+  margin-top: 20px;
+  color:#cc337a;
+}
+
+.popup-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff1a8c; /* roze */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  animation: fadeInOut 2s ease forwards;
+  z-index: 1000;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
