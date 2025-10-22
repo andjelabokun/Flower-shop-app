@@ -5,7 +5,7 @@ import { TableRowFlower } from "../components/TableRowFlower";
 
 export const Flower = () => {
   const [data, setData] = useState([]);
-  const [categories, setCategories] = useState([]); // NOVO: Stanje za kategorije
+  const [categories, setCategories] = useState([]); 
   const [loading, setLoading] = useState(true);
   const [q, setQ] = useState("");
   const [sort, setSort] = useState({ by: "id", dir: "asc" });
@@ -21,12 +21,12 @@ export const Flower = () => {
   });
 
   useEffect(() => {
-    // DOHVATANJE: Cvetova i Kategorija istovremeno
+    
     const fetchData = async () => {
       try {
         const [flowerRes, categoryRes] = await Promise.all([
           http.get("/flower"),
-          http.get("/category"), // PRETPOSTAVLJENI API ENDPOINT ZA KATEGORIJE
+          http.get("/category"), 
         ]);
         setData(flowerRes.data);
         setCategories(categoryRes.data);
@@ -65,19 +65,19 @@ const handleOpenModal = (flower = null) => {
     if (flower) {
         setEditing(flower);
         
-        // KRITIČNO: Konvertujemo category_id u String (za SELECT) ili ostavljamo prazan string ako je NULL
+        
         const categoryId = flower.categoryId !== null ? String(flower.categoryId) : ""; 
         
         setForm({
             name: flower.name,
             description: flower.description,
             price: flower.price,
-            // URL slike se učitava direktno (sa backenda dolazi kao image_url ako koristite Snake Case u DB)
+            
             imageUrl: flower.imageUrl || "", 
             categoryId: categoryId, 
         });
     } else {
-        // ... (logika za dodavanje novog proizvoda)
+        
     }
     setShowModal(true);
 };
@@ -87,26 +87,23 @@ const handleOpenModal = (flower = null) => {
     setEditing(null);
   };
 
- // U FAJLU Flower.js
-// ... (sav kod pre ove funkcije ostaje isti)
+
 
 const handleSave = async (e) => {
     e.preventDefault();
     
-    // 👇️ KRITIČNA LOGIKA: Pravilna konverzija tipova za slanje na server
+   
     const payload = {
       ...form,
-      price: Number(form.price), // Cena mora biti poslata kao broj
-      imageUrl: form.imageUrl, // URL je string, šaljemo ga direktno
-      
-      // Ako je category_id prazan string (nema odabrane kategorije), šaljemo null.
-      // U suprotnom, konvertujemo ga u broj.
+      price: Number(form.price), 
+      imageUrl: form.imageUrl, 
+     
       categoryId: form.categoryId === "" ? null : Number(form.categoryId),
     };
     
     try {
       if (editing) {
-        // Ažuriranje
+        // azuriranje
         const res = await http.put(`/flower/${editing.id}`, payload);
         setData((prev) =>
           prev.map((f) => (f.id === editing.id ? res.data : f))
@@ -114,7 +111,7 @@ const handleSave = async (e) => {
         );
         alert("Cvet je uspešno IZMENJEN!");
       } else {
-        // Kreiranje novog cveta
+        // kreiranje novog cveta
         const res = await http.post("/flower", payload);
         setData((prev) => [...prev, res.data]);
         alert("Novi cvet je uspešno DODAT!");
@@ -125,7 +122,7 @@ const handleSave = async (e) => {
     }
 };
 
-// ... (sav kod posle ove funkcije ostaje isti)
+
 
   const handleDelete = async (id) => {
     if (!window.confirm("Da li sigurno želiš da obrišeš proizvod?")) return;
@@ -174,12 +171,12 @@ const handleSave = async (e) => {
               <th onClick={() => toggleSort("price")}>
                 Cena {sort.by === "price" && (sort.dir === "asc" ? "▲" : "▼")}
               </th>
-              {/* UKLONJENA KOLONA: <th>Kategorija</th> */}
+              
               <th>Akcije</th>
             </tr>
           </thead>
           <tbody>
-            {/* Redovi moraju i dalje dobiti categories iako je ne prikazujemo */}
+            
             {filtered.map((f) => (
               <TableRowFlower
                 key={f.id}
@@ -232,7 +229,7 @@ const handleSave = async (e) => {
                 }
               />
               
-              {/* NOVO: Padajuća lista za Kategoriju */}
+              {/* padajuca lista za kategoriju */}
               <select
                 className="input"
                 value={form.categoryId}

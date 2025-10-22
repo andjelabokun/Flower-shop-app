@@ -67,12 +67,12 @@ public class OrderServis {
             throw new Exception("Order must contain at least one item");
         }
         
-        // Izmenjen deo u OrderServis.java
+        
 
         for(OrderItemDto it : dto.getItems()){
             OrderItem oi = new OrderItem();
 
-    // Promena: Koristi se em.find i eksplicitna provera
+    
             Flower f = em.find(Flower.class, it.getFlowerId());
 
             if(f == null) {
@@ -82,7 +82,7 @@ public class OrderServis {
             oi.setFlower(f);
             oi.setQuantity(it.getQuantity());
     
-    // Sada je sigurno pristupiti f.getPrice()
+    
             double price = it.getUnitPrice()>0 ? it.getUnitPrice() : f.getPrice();
             oi.setUnitPrice(price);
     
@@ -95,7 +95,7 @@ public class OrderServis {
         //vracamo dto jer ide nazad na klijenta
         return mapper.toDto(order);
        }catch(Exception e){
-           // --- KLJUČNO: ŠTAMPANJE GREŠKE U KONZOLU ---
+           
         System.err.println("\n--- DETALJAN ISPIS GREŠKE U OrderServis.create() ---");
         e.printStackTrace(); // OVO SIGURNO ISPISUJE GRESKU
         System.err.println("------------------------------------------------------\n");

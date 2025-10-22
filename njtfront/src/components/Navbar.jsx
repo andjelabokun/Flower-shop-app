@@ -8,7 +8,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("me") || "null");
-  const role = user?.role; // može biti "ADMIN" ili "USER"
+  const role = user?.role; // može biti "FLORIST" ili "USER"
   const isAuth = !!token;
 
   
@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="nav-inner">
-        {/* 🌸 Logo sekcija */}
+        {/* Logo sekcija */}
         <div className="nav-left">
           <Link to="/" className="logo">
             <img src="/flower.png" alt="logo" className="logo-img" />
@@ -33,11 +33,11 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* 🌸 Linkovi */}
+        {/* Linkovi */}
           <nav className="nav-links">
           <NavLink to="/" className="nav-item">Početna</NavLink>
 
-          {/* Ako je admin */}
+          {/* Ako je cvecar */}
           {isAuth && role === "FLORIST" && (
            <>
             <NavLink to="/kategorije" className="nav-item">Kategorije</NavLink>
@@ -46,7 +46,7 @@ export default function Navbar() {
             </>
            )}
 
-           {/* Ako je običan korisnik */}
+           {/* Ako je  korisnik */}
            {isAuth && role === "USER" && (
            <>
             <NavLink to="/korisnickekategorije" className="nav-item">Cveće</NavLink>
@@ -56,7 +56,7 @@ export default function Navbar() {
           </nav>
 
 
-        {/* 🌸 Desna sekcija – login/register ili user info */}
+        {/* Desna sekcija – login/register ili user info */}
         <div className="nav-actions">
           {!isAuth ? (
             <>

@@ -1,19 +1,19 @@
-/* Global CSS — boje, tipografija, utility klase, reset */
+
 :root {
-  /* 🌸 Nova paleta — cvećara vibe */
-  --bg: #fff7fa;           /* svetla pozadina */
-  --surface: #ffffff;      /* površine kartica, sekcija */
-  --muted: #a26a82;        /* sekundarni tekst */
-  --primary: #e75480;      /* glavna boja (ružičasta) */
-  --secondary: #ffd6e0;    /* svetlo roze akcent */
-  --accent: #a3c7a3;       /* zelena nijansa za detalje */
-  --text: #333333;         /* primarni tekst */
-  --stroke: #f4c2c2;       /* ivice i obrubi */
-  --radius: 16px;          /* zaobljenja */
-  --shadow: 0 4px 20px rgba(231, 84, 128, 0.1); /* senka */
+  
+  --bg: #fff7fa;           
+  --surface: #ffffff;      
+  --muted: #a26a82;        
+  --primary: #e75480;      
+  --secondary: #ffd6e0;   
+  --accent: #a3c7a3;       
+  --text: #333333;        
+  --stroke: #f4c2c2;       
+  --radius: 16px;          
+  --shadow: 0 4px 20px rgba(231, 84, 128, 0.1);
 }
 
-/* Globalni reset i font */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,7 +40,7 @@ img {
   margin-inline: auto;
 }
 
-/* 🌼 Dugmići */
+
 .btn {
   border: 1px solid var(--stroke);
   background: var(--surface);
@@ -67,7 +67,7 @@ img {
   background: #d74370;
 }
 
-/* 💫 Linkovi */
+
 .link {
   color: var(--muted);
   text-decoration: none;
@@ -77,7 +77,7 @@ img {
   color: var(--primary);
 }
 
-/* 💎 Chip (mali badge element) */
+
 .chip {
   border: 1px solid var(--stroke);
   background: var(--surface);
@@ -92,7 +92,7 @@ img {
   color: #fff;
 }
 
-/* 🪷 Pil (obla oznaka) */
+
 .pill {
   display: inline-block;
   background: var(--surface);
@@ -103,7 +103,7 @@ img {
   font-size: 0.85rem;
 }
 
-/* 📦 Sekcije */
+
 section {
   padding: 56px 0;
   background: var(--surface);
@@ -121,7 +121,7 @@ section {
   font-size: clamp(1.4rem, 2.6vw, 2rem);
 }
 
-/* 🌸 Footer */
+
 
 .footer {
   border-top: 1px solid var(--stroke);
@@ -135,7 +135,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* da se lepo složi ako se smanji ekran */
+  flex-wrap: wrap; 
   gap: 20px;
   text-align: left;
 }
@@ -186,7 +186,7 @@ small {
   font-size: 0.85rem;
 }
 
-/* 🌿 Brand i helper klase */
+
 .brand {
   display: flex;
   align-items: center;
@@ -202,7 +202,7 @@ small {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 
-/* ⚙️ Responsive utiliti */
+
 @media (max-width: 980px) {
   section {
     padding: 42px 0;

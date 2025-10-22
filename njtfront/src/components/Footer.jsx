@@ -13,11 +13,7 @@ export const Footer = () => {
           “Svaki cvet je poruka, mi je samo nežno upakujemo.”
         </p>
 
-        {/*<ul className="foot-links">
-          <li><a href="#">O nama</a></li>
-          <li><a href="#">Galerija</a></li>
-          <li><a href="#">Kontakt</a></li>
-        </ul>*/}
+        
 
         <small>© {new Date().getFullYear()} BlossomGarden</small>
       </div>

@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 import CartPage from "./pages/CartPage";
 import FlowersPage from "./pages/FlowersPage";
 import CategoryPage from './pages/CategoryPage';
-import Orders from './pages/Orders'; // Dodaj ovaj import
+import Orders from './pages/Orders'; 
  
 function App() {
 
@@ -40,21 +40,21 @@ useEffect(() => {
 
   
   const addToCart = (product) => {
-    // 1. Proveri da li proizvod već postoji u korpi
+    // proveri da li proizvod vec postoji u korpi
     const existingItemIndex = cart.findIndex((item) => item.id === product.id);
 
     if (existingItemIndex > -1) {
-      // 2. AKO POSTOJI: Kreiraj novu korpu sa ažuriranom količinom
+      // AKO POSTOJI: kreiraj novu korpu sa azuriranom kolicinom
       const newCart = [...cart];
       const existingItem = newCart[existingItemIndex];
       
-      // Količina se povećava za 1 (ako nije definisana, kreni od 1+1=2)
+      // kolicina se povećava za 1 (ako nije definisana, kreni od 1)
       existingItem.quantity = (existingItem.quantity || 1) + 1; 
 
       setCart(newCart);
     } else {
-      // 3. AKO NE POSTOJI: Dodaj novu stavku sa quantity: 1
-      // Proizvodu dodajemo quantity: 1 pre nego što ga ubacimo u korpu
+      // AKO NE POSTOJI: dodaj novu stavku sa quantity da bude  1
+      // dodajemo quantity pre nego sto ga ubacimo u korpu
       const newItem = { ...product, quantity: 1 };
       setCart([...cart, newItem]);
     }
@@ -71,6 +71,7 @@ useEffect(() => {
       <Route path = "/register" element={<Register onSuccess={() => window.location.href='/'} />}/>
 
       {/*za obirnog ulogovanog korisnika imamo rutu za korpu*/}
+      {/*neke rute su zasticene da ne bi moglo bez logovanja da se pristupi njima*/}
       <Route path  = "/korisnickekategorije" element={<ProtectedRoute><CategoryPage /></ProtectedRoute>}/>
         <Route path = "/korisnickekategorije/:id" element={<ProtectedRoute><FlowersPage addToCart={addToCart}/></ProtectedRoute>}/>
         <Route path = "/cart" element={<ProtectedRoute><CartPage cart={cart} setCart={setCart} userId={userId}/></ProtectedRoute>}/>

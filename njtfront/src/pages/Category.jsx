@@ -112,7 +112,7 @@ export const Category = () => {
                 name: newCategoryName.trim()
             });
             
-            // Vraćamo kreirani objekat iz baze i stavljamo u tabelu
+            // Vracamo kreirani objekat iz baze i stavljamo u tabelu
             setData((prev) => [...prev, res.data]);
             alert("Kategorija je uspešno DODATA!");
             
@@ -139,11 +139,11 @@ export const Category = () => {
         setNovoIme("");
     }
 
-    // FUNKCIJE ZA MODAL (Kreiranje)
+    
     function openCreateModal(){
-        // Resetujemo formu za editovanje
+       
         cancelEdit(); 
-        // Otvaramo modal za kreiranje
+        
         setNewCategoryName("");
         setShowModal(true);
     }
@@ -156,7 +156,7 @@ export const Category = () => {
 
     console.log(data, loading, error);
 
-    // Renderovanje
+    
     if(loading) return <div className="container admin-wrap">Učitavanje...</div>;
     if(error) return <div className="container admin-wrap" style={{color: 'red'}}>Greška: {error}</div>;
 
@@ -227,7 +227,7 @@ export const Category = () => {
                 </tbody>
             </table>
 
-            {/* -------------------- MODAL ZA KREIRANJE NOVE KATEGORIJE -------------------- */}
+            
             {showModal && (
                 <div className="modal-overlay">
                     <div className="modal-content">
@@ -253,7 +253,7 @@ export const Category = () => {
                     </div>
                 </div>
             )}
-            {/* ---------------------------------------------------------------------------------- */}
+            
         </div>
     )
 }

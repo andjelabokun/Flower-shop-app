@@ -68,11 +68,11 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // OVO JE KRITIČNO: Dozvolite sve izvore za razvoj
+        
         configuration.setAllowedOrigins(List.of("*")); 
-        // Dozvolite sve metode (OPTIONS, GET, POST, PUT, DELETE)
+        
         configuration.setAllowedMethods(List.of("*")); 
-        // Dozvolite sve heder-e (uključujući Authorization i Content-Type)
+        
         configuration.setAllowedHeaders(List.of("*")); 
         
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

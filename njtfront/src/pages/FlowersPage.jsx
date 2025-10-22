@@ -4,11 +4,11 @@ import http from "../api/http";
 import "../css/FlowerPage.css";
 
 export default function FlowersPage({ addToCart }) {
-  const { id } = useParams(); // ID kategorije iz URL-a
+  const { id } = useParams(); 
   const [flowers, setFlowers] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [catName, setCatName] = useState("");
-  const [showPopup, setShowPopup] = useState(false); // 🌸 za prikaz notifikacije
+  const [showPopup, setShowPopup] = useState(false); 
 
   useEffect(() => {
     const fetchFlowers = async () => {
@@ -47,7 +47,7 @@ export default function FlowersPage({ addToCart }) {
   if (!flowers.length) {
     return (
       <div className="flowers-page">
-        <h2 className="flowers-title">Trenutno nema proizvoda u ovoj kategoriji 🌷</h2>
+        <h2 className="flowers-title">Trenutno nema proizvoda u ovoj kategoriji.</h2>
       </div>
     );
   }
@@ -87,7 +87,7 @@ export default function FlowersPage({ addToCart }) {
         ))}
       </div>
 
-      {/* 🌸 Popup poruka */}
+      {/* popup poruka */}
       {showPopup && (
         <div className="popup-message">🌷 Uspešno dodato u korpu!</div>
       )}

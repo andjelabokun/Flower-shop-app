@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import http from "../api/http"; // Predpostavljam da je http.js u ../api/
-import "../css/Orders.css"; // Kasnije ćemo definisati stilove
+import http from "../api/http"; 
+import "../css/Orders.css"; 
 
 export default function Orders() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Funkcija za dohvatanje narudžbina
+  // fja za dohvatanje narudžbina
   const fetchOrders = async () => {
     try {
       setLoading(true);
       const res = await http.get("/orders");
-      // Sortiraj po datumu kreiranja opadajuće (najnovije prvo)
+      // najnovije narudzbine na pocetku
       const sortedOrders = res.data.sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );
@@ -30,17 +30,17 @@ export default function Orders() {
     fetchOrders();
   }, []);
 
-  // Funkcija za promenu statusa
+  // fja za promenu statusa
   const handleStatusChange = async (orderId, newStatus) => {
     if (!window.confirm(`Da li ste sigurni da želite da promenite status narudžbine #${orderId} u ${newStatus}?`)) {
       return;
     }
 
     try {
-      // Koristi PATCH end-point: PATCH /orders/{id}/status?status={newStatus}
+      
       await http.patch(`/orders/${orderId}/status?status=${newStatus}`);
       
-      // Ažuriraj stanje na klijentu
+      
       setOrders((prevOrders) =>
         prevOrders.map((order) =>
           order.id === orderId ? { ...order, status: newStatus } : order
@@ -52,7 +52,7 @@ export default function Orders() {
     }
   };
   
-  // Pomoćna funkcija za formatiranje datuma
+  // pomocna funkcija za formatiranje datuma
   const formatDateTime = (dateTime) => {
       const options = { 
           year: 'numeric', 
@@ -68,7 +68,7 @@ export default function Orders() {
   if (loading) return <div className="loading">Učitavanje narudžbina...</div>;
   if (error) return <div className="error">{error}</div>;
 
-  const statuses = ["CREATED", "CONFIRMED", "COMPLETED", "CANCELED"]; // Mogući statusi
+  const statuses = ["CREATED", "CONFIRMED", "COMPLETED", "CANCELED"]; // moguci statusi
 
   return (
     <div className="orders-wrap">
@@ -106,7 +106,7 @@ export default function Orders() {
                   <select
                     value={order.status}
                     onChange={(e) => handleStatusChange(order.id, e.target.value)}
-                    disabled={order.status === 'COMPLETED' || order.status === 'CANCELED'} // Ne dozvoli promenu ako je završena/otkazana
+                    disabled={order.status === 'COMPLETED' || order.status === 'CANCELED'} // ne dozvoli promenu ako je zavrsena/otkazana
                   >
                     {statuses.map((s) => (
                       <option key={s} value={s}>

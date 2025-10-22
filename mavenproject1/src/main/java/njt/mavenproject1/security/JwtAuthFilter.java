@@ -44,13 +44,13 @@ public class JwtAuthFilter extends OncePerRequestFilter{
     }
     
     String authHeader = request.getHeader("Authorization");
-    // ✅ 1. Ako nema tokena ili nije Bearer — pusti dalje (npr. login, register)
+    //  nema tokena ili nije Bearer — pusti dalje (npr. login, register)
     if (authHeader == null || !authHeader.startsWith("Bearer ")) {
         filterChain.doFilter(request, response);
         return;
     }
 
-    // ✅ 2. Inače — izvuci token (bez "Bearer ")
+    // izvuci token 
     String token = authHeader.substring(7);
     String username = null;
 
@@ -58,11 +58,11 @@ public class JwtAuthFilter extends OncePerRequestFilter{
         username = jwt.extractUsername(token);
     } catch (Exception ignored) {}
 
-    // ✅ 3. Ako imamo username i korisnik nije već autentifikovan
+    //  Ako imamo username i korisnik nije već autentifikovan
     if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
         UserDetails userDetails = uds.loadUserByUsername(username);
 
-        // ✅ 4. Proveri validnost tokena
+        //  Proveri validnost tokena
         if (jwt.isValid(token, userDetails)) {
             UsernamePasswordAuthenticationToken authToken =
                     new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
@@ -72,7 +72,7 @@ public class JwtAuthFilter extends OncePerRequestFilter{
         }
     }
 
-    // ✅ 5. Uvek pozovi dalje filter chain
+    //  Uvek pozovi dalje filter chain
     filterChain.doFilter(request, response);
 
 

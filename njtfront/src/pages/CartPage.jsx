@@ -1,5 +1,5 @@
 import React from "react";
-// OVO ĆE BITI NOVI CSS fajl za bolji izgled
+
 import "../css/Crat.css"; 
 import { useNavigate } from "react-router-dom";
 import http from "../api/http";
@@ -7,10 +7,10 @@ import  {  useState } from 'react'
 
 const CartPage = ({ cart, setCart, userId }) => {
 
-    // NOVO: Stanje za napomenu
+    // Stanje za napomenu
     const [note, setNote] = useState("");
 
-    // Funkcija za proračun ukupnog iznosa korpe
+    // Funkcija za proracun ukupnog iznosa korpe
     const calculateTotal = () => {
         return cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
     };
@@ -67,8 +67,7 @@ const CartPage = ({ cart, setCart, userId }) => {
                         {cart.map((c) => (
                             <div key={c.id} className="cart-item-card">
                                 
-                                {/* Slika proizvoda (ako je imate) */}
-                                {/* <img src={c.imageUrl} alt={c.name} className="item-image" /> */}
+                                {/* Slika proizvoda  */}
 
                                 <div className="item-details">
                                     <h4 className="item-name">{c.name}</h4>
@@ -102,7 +101,7 @@ const CartPage = ({ cart, setCart, userId }) => {
                     <div className="order-summary-box">
                         <h3>Rezime narudžbine</h3>
 
-                        {/* NOVO: Polje za napomenu */}
+                        {/* Polje za napomenu */}
                         <div className="napomena-field">
                             <label htmlFor="order-note">Napomena za narudžbinu:</label>
                             <textarea
@@ -113,7 +112,6 @@ const CartPage = ({ cart, setCart, userId }) => {
                                 placeholder="Npr. Isporuka na adresu: Ulica cvetova 5, Vreme isporuke: posle 17h..."
                             ></textarea>
                         </div>
-                        {/* Kraj novog polja */}
 
                         <div className="summary-row">
                             <span>Broj stavki:</span>
