@@ -1,20 +1,19 @@
-# 📊 Twitter Data Analysis Project
+# Poslovni sistem za praćenje rada cvećare
 
-Ovaj projekat sadrži Google Colab skriptu za analizu Twitter podataka. 
+Ovaj projekat predstavlja Full-Stack web aplikaciju za upravljanje cvećarom, razvijenu u okviru kursa **Napredne Java Tehnologije**.
 
-## 📝 Opis projekta
-Glavni cilj ovog projekta je obrada i vizuelizacija podataka iz `Tweeter_Data_IN.csv` fajla. Skripta pokriva korake od čišćenja podataka do osnovne statističke analize.
+## Opis projekta
+Aplikacija omogućava pregled kataloga cveća i kupovinu željenih proizvoda od strane kupca, a uloga administratora obuhvata funkcionalnosti upravljanja zalihama i narudžbinama.
 
-## 🛠️ Korišćene biblioteke
-Za pokretanje skripte potrebne su sledeće Python biblioteke:
-* `pandas` - za rad sa tabelama
-* `matplotlib` ili `seaborn` - za grafikone
-* `numpy` - za matematičke operacije
+## Tehnologije
 
-## 🚀 Kako pokrenuti?
-1. Preuzmite `Tweeter_Data_IN.csv` i `.ipynb` skriptu.
-2. Otvorite skriptu u [Google Colab](https://colab.research.google.com/).
-3. Otpremite CSV fajl u Colab sesiju pre pokretanja ćelija.
+### Backend:
+* **Java** (Spring Boot framework)
+* **MySQL** (Relaciona baza podataka)
+* **SQLyog** (Korišćen za administraciju baze i pisanje upita)
+* **Maven** (Upravljanje zavisnostima)
 
----
-*Projekat kreirala: @andjelabokun*
+### Frontend:
+* **React.js** (Korisnički interfejs)
+* **Axios** (Komunikacija sa backendom)
+* **Node.js**
